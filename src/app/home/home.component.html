@@ -1,0 +1,54 @@
+<!-- Barra de navegacion -->
+
+
+
+<!-- Barra de navegacion -->
+
+
+<!-- Contenedor General -->
+
+<div class="container-fluid">
+    <h1 class="text-center mt-3 display-4 font-weight-lighter">Solicite su prueba</h1>
+    <h1 class="text-center display-3 font-weight-lighter">COVID-19</h1>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-11 col-sm-9 col-md-6 col-lg-5 col-xl-4">
+            <form>
+
+                <div class="form-group">
+                    <label for="formGroupExampleInput" style="font-weight: bold;">Nombre y apellidos</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Coloque su nombre" [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" style="font-weight: bold;">Correo electronico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="someone@example.com" [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}">
+                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su direccion de correo electronico.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1" style="font-weight: bold;">Provincia en la que habita</label>
+                    <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="formData.province" [ngModelOptions]="{standalone:true}">
+                      <option *ngFor=" let province of provinceList " value = "{{province}} ">{{province}}</option>
+                      
+                    </select>
+                </div>
+
+
+                <div class="form-group ">
+                    <label for="exampleFormControlTextarea1 " style="font-weight: bold; ">Describa sus sintomas</label>
+                    <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 " [(ngModel)]="formData.description " [ngModelOptions]="{standalone:true} "></textarea>
+                </div>
+            </form>
+
+            <button class="btn btn-lg btn-block bg-dark text-center text-white mt-3 mb-4 " (click)="testRequest(formData) ">Solicitar prueba</button>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Contenedor General -->
